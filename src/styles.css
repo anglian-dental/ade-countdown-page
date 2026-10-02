@@ -21,6 +21,16 @@ body,
   min-height: 100%;
 }
 
+/*
+ * Scale the whole layout with the screen. 1rem is 16px up to 1920x1080,
+ * then grows with the smaller of width or height, reaching 32px at 4K
+ * (3840x2160). Every rem-based size on the page follows, so a 43-inch 4K
+ * TV shows the same composition as a 1080p TV at twice the pixel size.
+ */
+html {
+  font-size: clamp(16px, min(0.8333vw, 1.4815vh), 34px);
+}
+
 body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -46,7 +56,7 @@ body {
   z-index: 2;
   pointer-events: none;
   background: radial-gradient(
-    520px circle at var(--px) var(--py),
+    32.5rem circle at var(--px) var(--py),
     rgba(126, 246, 255, 0.14),
     transparent 62%
   );
@@ -70,7 +80,7 @@ body {
   background-image:
     linear-gradient(rgba(126, 246, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(126, 246, 255, 0.08) 1px, transparent 1px);
-  background-size: 84px 84px;
+  background-size: 5.25rem 5.25rem;
   mask-image: radial-gradient(circle at 50% 42%, #000 0%, transparent 72%);
   animation: grid-drift 36s linear infinite;
 }
@@ -171,7 +181,7 @@ body {
 .countdown,
 .progress,
 .clock {
-  width: min(1120px, 100%);
+  width: min(70rem, 100%);
   text-align: center;
 }
 
@@ -299,7 +309,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(0.65rem, 1.4vw, 1.2rem);
-  perspective: 1100px;
+  perspective: 70rem;
 }
 
 .card {
@@ -410,7 +420,7 @@ h1 {
 }
 
 .progress {
-  width: min(760px, 100%);
+  width: min(47.5rem, 100%);
 }
 
 .progress-head {
@@ -468,8 +478,8 @@ h2 {
   inset: 0;
   background: repeating-linear-gradient(
     90deg,
-    transparent 0 14px,
-    rgba(2, 8, 15, 0.72) 14px 17px
+    transparent 0 0.875rem,
+    rgba(2, 8, 15, 0.72) 0.875rem 1.0625rem
   );
 }
 
@@ -547,7 +557,7 @@ h2 {
 
 @keyframes grid-drift {
   to {
-    transform: translate3d(0, 84px, 0);
+    transform: translate3d(0, 5.25rem, 0);
   }
 }
 
