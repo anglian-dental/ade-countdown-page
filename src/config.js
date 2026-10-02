@@ -1,7 +1,7 @@
 /**
- * Anglian Dental deployment countdown.
+ * Anglian Dental go-live countdown (new system and dashboards).
  *
- * Change the deployment moment by editing DEPLOYMENT_DATE only.
+ * Change the go-live moment by editing DEPLOYMENT_DATE only.
  * Use a full ISO-8601 timestamp with an explicit numeric offset.
  * Do not use a date-only string such as "2026-10-26": browsers do not
  * agree on which timezone that means.
@@ -83,20 +83,20 @@ function phrase(count, singular, plural) {
 
 export function summaryCopy(parts) {
   if (parts.live) {
-    return "Deployment day. Anglian Dental deployment is now live.";
+    return "Go-live day. Anglian Dental's new system and dashboards are now live.";
   }
-  return `${phrase(parts.days, "day", "days")}, ${phrase(parts.hours, "hour", "hours")}, and ${phrase(parts.minutes, "minute", "minutes")} remaining until deployment.`;
+  return `${phrase(parts.days, "day", "days")}, ${phrase(parts.hours, "hour", "hours")}, and ${phrase(parts.minutes, "minute", "minutes")} remaining until the new system and dashboards go live.`;
 }
 
 export function statusCopy(ratio, live) {
   if (live) {
-    return "The deployment window is complete.";
+    return "The go-live window is complete.";
   }
   if (ratio <= 0) {
     return `Preparation begins ${ukDate.format(progressStartMs)}.`;
   }
   if (ratio >= 0.85) {
-    return "Deployment approaching";
+    return "Go-live approaching";
   }
-  return "Deployment is getting closer...";
+  return "Go-live is getting closer...";
 }

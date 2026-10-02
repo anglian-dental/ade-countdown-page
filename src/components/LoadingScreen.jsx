@@ -3,7 +3,7 @@ import { LOADING_MIN_MS, LOGO_SRC } from "../config.js";
 
 const STEPS = [
   "Synchronising UK time",
-  "Loading deployment schedule",
+  "Loading go-live schedule",
   "Preparing display",
 ];
 
@@ -82,7 +82,7 @@ export default function LoadingScreen({ leaving, onDone }) {
         </div>
 
         <p className="kicker">
-          <span>Initialising deployment countdown</span>
+          <span>Initialising go-live countdown</span>
         </p>
 
         <div className="loader-line" aria-hidden="true">

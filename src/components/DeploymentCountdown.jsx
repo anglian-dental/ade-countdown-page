@@ -153,9 +153,9 @@ export default function DeploymentCountdown({ entering = false }) {
             />
           </div>
           <p className="kicker">
-            <span>Deployment countdown</span>
+            <span>Go-live countdown</span>
           </p>
-          <h1>Deployment Day</h1>
+          <h1>New System and Dashboards Go-Live</h1>
           <p className="when">
             <span>{deploymentLabel}</span>
             {deploymentClock ? (
@@ -171,7 +171,7 @@ export default function DeploymentCountdown({ entering = false }) {
 
         <section className="countdown" aria-labelledby="countdown-title">
           <h2 id="countdown-title" className="visually-hidden">
-            Time remaining until deployment
+            Time remaining until the new system and dashboards go live
           </h2>
           <span className="bracket bracket-tl" aria-hidden="true" />
           <span className="bracket bracket-tr" aria-hidden="true" />
@@ -180,8 +180,10 @@ export default function DeploymentCountdown({ entering = false }) {
 
           {parts.live ? (
             <div className="live-banner">
-              <p className="live-title">DEPLOYMENT DAY</p>
-              <p className="live-copy">Anglian Dental deployment is now live.</p>
+              <p className="live-title">GO-LIVE DAY</p>
+              <p className="live-copy">
+                Anglian Dental's new system and dashboards are now live.
+              </p>
             </div>
           ) : (
             <div className="cards" aria-hidden="true">
@@ -199,14 +201,14 @@ export default function DeploymentCountdown({ entering = false }) {
           <p className="visually-hidden" aria-live="polite">
             {configured
               ? summary
-              : "The deployment time could not be read. Check the configuration constants."}
+              : "The go-live time could not be read. Check the configuration constants."}
           </p>
         </section>
 
         <section className="progress" aria-labelledby="progress-heading">
           <div className="progress-head">
             <h2 id="progress-heading">
-              {parts.live ? "Deployment complete" : "Preparing for deployment"}
+              {parts.live ? "Go-live complete" : "Preparing for go-live"}
             </h2>
             <p className="progress-percent">{percent}%</p>
           </div>
@@ -225,7 +227,7 @@ export default function DeploymentCountdown({ entering = false }) {
             <div className="bar-segments" aria-hidden="true" />
           </div>
           <p className="status">
-            {configured ? statusCopy(ratio, parts.live) : "Deployment time is not configured."}
+            {configured ? statusCopy(ratio, parts.live) : "Go-live time is not configured."}
           </p>
         </section>
 
