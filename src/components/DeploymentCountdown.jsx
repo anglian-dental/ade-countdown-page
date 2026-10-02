@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  LOGO_SRC,
   deploymentMs,
   progressRatio,
   progressStartMs,
@@ -103,7 +104,7 @@ function unitRings(parts, ratio) {
   };
 }
 
-export default function DeploymentCountdown() {
+export default function DeploymentCountdown({ entering = false }) {
   const now = useNow();
   const parts = remainingParts(now);
   const ratio = progressRatio(now);
@@ -126,7 +127,7 @@ export default function DeploymentCountdown() {
 
   return (
     <main
-      className="screen"
+      className={`screen${entering ? " is-entering" : ""}`}
       onPointerMove={trackPointer}
       onPointerLeave={resetPointer}
     >
@@ -145,7 +146,7 @@ export default function DeploymentCountdown() {
         <header className="brand">
           <div className="brand-mark">
             <img
-              src="/assets/anglian-dental-logo-dark.png"
+              src={LOGO_SRC}
               alt="Anglian Dental. Design, Build, Equip, Maintain."
               width="946"
               height="864"

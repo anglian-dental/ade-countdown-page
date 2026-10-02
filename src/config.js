@@ -19,6 +19,11 @@ export const TIME_ZONE = "Europe/London";
 export const DEPLOYMENT_DATE = "2026-10-26T09:00:00+00:00";
 export const PROGRESS_START = "2026-10-01T00:00:00+01:00";
 
+/** Minimum time the branded loading screen stays visible before the countdown. */
+export const LOADING_MIN_MS = 5000;
+
+export const LOGO_SRC = "/assets/anglian-dental-logo-dark.png";
+
 export const deploymentMs = Date.parse(DEPLOYMENT_DATE);
 export const progressStartMs = Date.parse(PROGRESS_START);
 
